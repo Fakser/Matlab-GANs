@@ -86,13 +86,13 @@ disp('neural networks defined')
 dlnetGenerator = dlnetwork(lgraphGenerator);
 dlnetDiscriminator = dlnetwork(lgraphDiscriminator);
 
-save(sprintf('%s_generator.mat', dataset_name), 'dlnetGenerator');
-save(sprintf('%s_discriminator.mat', dataset_name), 'dlnetDiscriminator');
+save(sprintf('models/%s_generator.mat', dataset_name), 'dlnetGenerator');
+save(sprintf('models/%s_discriminator.mat', dataset_name), 'dlnetDiscriminator');
 
 disp('test load of models')
 
-load(sprintf('%s_generator.mat', dataset_name), 'dlnetGenerator');
-load(sprintf('%s_discriminator.mat', dataset_name), 'dlnetDiscriminator');
+load(sprintf('models/%s_generator.mat', dataset_name), 'dlnetGenerator');
+load(sprintf('models/%s_discriminator.mat', dataset_name), 'dlnetDiscriminator');
 
 % Training loop specification
 
@@ -262,8 +262,8 @@ for epoch = 1:numEpochs
     
 end
 % after the training save the models to .onnx and test them
-save(sprintf('%s_generator.mat', dataset_name), 'dlnetGenerator');
-save(sprintf('%s_discriminator.mat', dataset_name), 'dlnetDiscriminator');
+save(sprintf('models/%s_generator.mat', dataset_name), 'dlnetGenerator');
+save(sprintf('models/%s_discriminator.mat', dataset_name), 'dlnetDiscriminator');
 
 ZNew = randn(1,1,numLatentInputs,25,'single');
 dlZNew = dlarray(ZNew,'SSCB');
