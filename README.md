@@ -22,5 +22,5 @@ The core idea of a GAN is based on the "indirect" training through the discrimin
 Simple example of GAN training procedure on Iris dataset:<br>
 We start with random noise:<br>
 ![meme3](./to_readme/0_iteration.png)<br>
-After many iterations our model will get better ad generating pictures:<br>
+After many iterations our GAN will get better at generating pictures:<br>
 ![meme4](./to_readme/nth_iteration.png)<br>
